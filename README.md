@@ -27,7 +27,7 @@ ADE20K semantic segmentation (`53.5 mIoU` on val), surpassing previous models by
 
 |  name  |  pretrain   | resolution | acc@1  | acc@5  | model |
 | :----: | :---------: | :--------: | :----: | :----: | :---: |
-| Swin-B | ImageNet-1K |  224*224   | 96.667 | 99.615 |       |
+| Swin-B | ImageNet-1K |  224*224   | 96.667 | 99.615 |   github(https://github.com/lukahola/Swin-Pet/raw/main/checkpoint/ckpt_epoch_260_39.pth)    |
 
 ## Getting started
 
