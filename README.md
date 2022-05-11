@@ -19,7 +19,7 @@ computation to non-overlapping local windows while also allowing for cross-windo
 Swin Transformer achieves strong performance on COCO object detection (`58.7 box AP` and `51.1 mask AP` on test-dev) and
 ADE20K semantic segmentation (`53.5 mIoU` on val), surpassing previous models by a large margin.
 
-![teaser](E:/Projects/Git/Pet-classification/figures/teaser.png)
+![teaser](E:/Projects/Git/Swin-Pet/figures/teaser.png)
 
 ### 本项目简介
 
