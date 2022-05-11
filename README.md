@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Pet-classification
 
 By 张天佑 SY2117325
@@ -124,5 +123,3 @@ class2/img45.jpeg 2
 
   >其余尽可参照原repo。
 =======
-# Swin-Pet
->>>>>>> 3a2ccc7ce18a52aa519d1a197abf9fd8c73314dd
