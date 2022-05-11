@@ -25,9 +25,9 @@ ADE20K semantic segmentation (`53.5 mIoU` on val), surpassing previous models by
 
 搜集建立了包含39种不同宠物猫狗的图像数据集，每个种类包含200张图片，总计7900张图片，以imagenet1k的数据格式保存。训练结果acc@1达到96.7%，acc@5达到99.6%。
 
-|  name  |  pretrain   | resolution | acc@1  | acc@5  | model |
-| :----: | :---------: | :--------: | :----: | :----: | :---: |
-| Swin-B | ImageNet-1K |  224*224   | 96.667 | 99.615 |   github(https://github.com/lukahola/Swin-Pet/raw/main/checkpoint/ckpt_epoch_260_39.pth)    |
+|  name  |  pretrain   | resolution | acc@1  | acc@5  |                            model                             |
+| :----: | :---------: | :--------: | :----: | :----: | :----------------------------------------------------------: |
+| Swin-B | ImageNet-1K |  224*224   | 96.667 | 99.615 | [github](https://github.com/lukahola/Swin-Pet/raw/main/checkpoint/ckpt_epoch_260_39.pth) |
 
 ## Getting started
 
