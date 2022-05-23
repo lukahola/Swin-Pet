@@ -22,7 +22,7 @@ ADE20K semantic segmentation (`53.5 mIoU` on val), surpassing previous models by
 
 ### 本项目简介
 
-搜集建立了包含 39 种不同宠物猫狗的图像数据集[image_demo](https://github.com/lukahola/Swin-Pet/tree/main/image_demo)，每个种类包含 200 张图片，总计 7900 张图片，以 imagenet1k 的数据格式保存。训练结果 acc@1 达到 96.7%，acc@5 达到 99.6%。
+搜集建立了包含 39 种不同种类宠物猫狗的图像数据集[image_demo](https://github.com/lukahola/Swin-Pet/tree/main/image_demo)，每个种类包含 200 张图片，总计 7900 张图片，以 imagenet1k 的数据格式保存。训练结果 acc@1 达到 96.7%，acc@5 达到 99.6%。
 
 |  name  |  pretrain   | resolution | acc@1  | acc@5  |                                          model                                           |
 | :----: | :---------: | :--------: | :----: | :----: | :--------------------------------------------------------------------------------------: |
@@ -126,3 +126,38 @@ class2/img45.jpeg 2
 
 ![demo](https://raw.githubusercontent.com/lukahola/Swin-Pet/main/figures/demo.png)
 > 其余尽可参照原 repo。
+
+## Usage
+
+### Train
+
+从头训练 `Swin Transformer` 可以使用以下命令:
+
+```bash
+python -m torch.distributed.launch --nproc_per_node <num-of-gpus-to-use> --master_port 12345  main.py \ 
+--cfg <config-file> --data-path <imagenet-path> [--batch-size <batch-size-per-gpu> --output <output-directory> --tag <job-tag>]
+```
+例如：
+```bash
+python -m torch.distributed.launch --nproc_per_node 4 --master_port 12345 main.py --cfg configs/swin_tiny_patch4_window7_224.yaml --data-path imagenet --batch-size 64
+```
+如果想添加识别种类，首先需要按照Data preparation所提示的进行准备，简单的改文件名、改注释map的工具可以参照[annotation_tools.py](https://github.com/lukahola/Swin-Pet/blob/main/annotation_tools.py). 之后更改NUM_CLASS为增加数据集后的数量，并在之后的验证中讲所添加种类增加到种类dict中。
+### Evaluation
+
+在验证集上评估 `Swin Transformer` 可以使用以下命令:
+
+```bash
+python -m torch.distributed.launch --nproc_per_node <num-of-gpus-to-use> --master_port 12345 main.py --eval \
+--cfg <config-file> --resume <checkpoint> --data-path <imagenet-path> 
+```
+例如：
+```bash
+python -m torch.distributed.launch --nproc_per_node 4 --master_port 12345 main.py --eval --cfg configs/swin_tiny_patch4_window7_224.yaml --resume/pth/swin_tiny_patch4_window7_224.pth --data-path imagenet
+```
+
+### Test
+如果只是想测试单张图片，只需要在[ckpt_loader.py](https://github.com/lukahola/Swin-Pet/blob/main/ckpt_loader.py)更改文件目录到所测试图片路径后，使用以下命令：
+```bash
+python ckpt_loader.py
+```
+或者直接在编译器中运行。
