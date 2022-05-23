@@ -18,7 +18,7 @@ computation to non-overlapping local windows while also allowing for cross-windo
 Swin Transformer achieves strong performance on COCO object detection (`58.7 box AP` and `51.1 mask AP` on test-dev) and
 ADE20K semantic segmentation (`53.5 mIoU` on val), surpassing previous models by a large margin.
 
-![teaser](https://github.com/lukahola/Swin-Pet/figures/teaser.png)
+![teaser](https://raw.githubusercontent.com/lukahola/Swin-Pet/main/figures/teaser.png)
 
 ### 本项目简介
 
@@ -84,8 +84,6 @@ pip install opencv-python==4.4.0.46 termcolor==1.1.0 yacs==0.1.8
 
 ### Data preparation
 
-![demo](https://github.com/lukahola/Swin-Pet/figures/demo.png)
-
 本项目数据集格式基于 imagenet1k，结构如下所示：
 
 ```bash
@@ -122,5 +120,9 @@ class1/img2.jpeg 1
 class2/img45.jpeg 2
 ...
 ```
+数据集中的图像示例如下，数据集已经上传至[网盘](https://bhpan.buaa.edu.cn:443/link/B5A114F7391581FFF80EC00C1421B579)：
+有效期限：2022-08-01 23:59
+访问密码：c8mA
 
+![demo](https://raw.githubusercontent.com/lukahola/Swin-Pet/main/figures/demo.png)
 > 其余尽可参照原 repo。
